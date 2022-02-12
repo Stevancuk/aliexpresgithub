@@ -1,0 +1,27 @@
+.podaciPrijava{
+    border: 1px solid black;
+    background-color: aqua;
+    margin: 2px;
+    padding: 5px;
+    width: 500px;
+}
+
+.vakcine{
+    border: 1px solid black;
+    background-color: aqua;
+    margin: 2px;
+    width: 500px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: text-top;
+    text-align: center;
+}
+
+.termini{
+    border: 1px solid black;
+    background-color: rgb(102, 228, 97);
+    margin: 6px;
+    padding: 3px;
+    width: 280px;
+    height: 120px;
+}

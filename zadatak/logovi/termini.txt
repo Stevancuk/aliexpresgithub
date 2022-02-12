@@ -1,0 +1,14 @@
+30.09.2021 16:34:32 - Termin ceka potvrdu: 'Vesa Vesic' '3' '2021-09-30' ('Nema alergiju!').
+30.09.2021 16:35:21 - Termin ceka potvrdu: 'Mita Mitic' '2' '2021-09-30' ('Moderno je biti vakcinisan.').
+30.09.2021 16:37:49 - Termin ceka potvrdu: 'Cala Calic' '4' '2021-10-07' ('').
+30.09.2021 16:40:07 - Termin ceka potvrdu: 'Mrka Mrkic' '5' '2021-10-04' ('mkr mkr mkr').
+30.09.2021 16:40:56 - Termin ceka potvrdu: 'Morza Morzic' '6' '2021-10-09' ('').
+30.09.2021 16:41:38 - Termin ceka potvrdu: 'Pcela Pcelic' '2' '2021-10-14' ('bzzzzz').
+01.10.2021 15:05:53 - Termin ceka potvrdu: 'Radi Sve' '1' '2021-10-02' ('jebote...').
+01.10.2021 15:06:48 - Termin ceka potvrdu: 'Provera Alerta' '3' '2021-10-03' ('ALERT!').
+01.10.2021 15:08:21 - Termin ceka potvrdu: 'IF' '6' '2021-10-10' ('da li radi IF?').
+01.10.2021 15:28:55 - Termin ceka potvrdu: 'test test' '5' '2021-10-20' ('test').
+01.10.2021 15:30:05 - Termin ceka potvrdu: 'test test' '5' '2021-10-21' ('test').
+22.01.2022 13:28:32 - Termin ceka potvrdu: 'Uros Dasic' '1' '2022-02-01' ('avikakote').
+22.01.2022 13:29:03 - Termin ceka potvrdu: 'Pera Peric' '1' '2022-02-01' ('Datosamja!').
+22.01.2022 21:07:49 - Termin ceka potvrdu: 'Cane Kurbla' '5' '2022-02-02' ('Idemonamars!').

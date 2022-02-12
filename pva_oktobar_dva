@@ -1,0 +1,158 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 10, 2021 at 10:24 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.1.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pva_oktobar_2021`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `korisnici`
+--
+
+CREATE TABLE `korisnici` (
+  `id` int(3) UNSIGNED NOT NULL,
+  `ime` varchar(20) NOT NULL,
+  `prezime` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `lozinka` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `korisnici`
+--
+
+INSERT INTO `korisnici` (`id`, `ime`, `prezime`, `email`, `lozinka`) VALUES
+(1, 'Пера', 'Перић', 'pperic@skola.com', 'pperic'),
+(2, 'Цане', 'Курбла', 'ckurbla@skola.com', 'ckurbla');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `termini`
+--
+
+CREATE TABLE `termini` (
+  `id` int(4) UNSIGNED NOT NULL,
+  `ime` varchar(50) NOT NULL,
+  `idVakcine` int(2) NOT NULL,
+  `datum` date NOT NULL,
+  `komentar` text DEFAULT NULL,
+  `odobren` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vakcine`
+--
+
+CREATE TABLE `vakcine` (
+  `id` int(2) UNSIGNED NOT NULL,
+  `naziv` varchar(30) NOT NULL,
+  `komentar` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vakcine`
+--
+
+INSERT INTO `vakcine` (`id`, `naziv`, `komentar`) VALUES
+(1, 'VIŠER', 'Najbolja vakcina ikada. Leči sve vrste kovida 100%. Sve starosne grupe mogu primiti ovu vakcinu.'),
+(2, 'Biontek/Fajzerova', 'Prema preliminarnim rezultatima efikasnost vakcine je 90 odsto.  Sredinom novembra obe kompanije su saopštile da je njihova vakcina delotvorna u 94 odsto slučajeva kada je reč o starijima od 65 godina.  Ova vakcina odobrena je u Srbiji i njena upotreba je već počela u Srbiji.'),
+(3, 'Moderna', 'Iz američke kompanije Moderna su sredinom novembra prošle godine saopštili da je njihova vakcina delotovorna 95 odsto protiv korona virusa.  Nije poznato koliko dugo traje imunitet, jer se stanje dobrovoljaca koji su je primili mora duže pratiti.  Postoje nagoveštaji da vakcina nudi izvesnu zaštutu pripadnicima starijih starosnih grupa.'),
+(4, 'Sinofarminovak Biotek', 'Vakcina protiv Kovida-19 razvijena u Kini pokazala je uspeh i drugoj fazi testiranja, kažu istraživači.  Nekoliko vakcina se razvija u Kini, od kojih su neke već u upotrebi.  Prema izveštaju, KoronaVak izaziva brzu reakciju imunog sistema, iako u studiji objavljenoj u aprilu i maju ove godine nije predstavljen procenat njene uspešnosti.'),
+(5, 'Sputnjik 5', 'Ruski naučnici objavili su još u septembru prvi izveštaj o vakcini protiv korona virusa koju je razvila ta zemlja, u kom navode da su rani testovi pokazali odgovor imunog sistema na taj lek.  Izveštaj objavljen u medicinskom časopisu Lanset (The Lancet) tvrdi da su svi pacijenti razvili antitela koja se bore protiv virusa, bez neželjenih nuspojava.'),
+(6, 'Astrazeneka', 'Proizvela istoimena kompanija i univerzitet Oksford dobila je upotrebnu dozvolu zdravstvenih vlasti Velike Britanije krajem prošle godine.  Ona je razvijana u prvim mesecima 2020., a na dobrovoljcima je testirana u aprilu.  Posle toga je prošla seriju kliničkih ispitivanja u kojima je učestvovalo hiljade ljudi.  Ova vakcina će ubrzati proces imunizacije, jer je jeftina, a masovna proizvodnja je laka.');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `vwtermini`
+-- (See below for the actual view)
+--
+CREATE TABLE `vwtermini` (
+`id` int(4) unsigned
+,`ime` varchar(50)
+,`idVakcine` int(2)
+,`datum` date
+,`komentar` text
+,`odobren` int(1)
+,`naziv` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `vwtermini`
+--
+DROP TABLE IF EXISTS `vwtermini`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vwtermini`  AS  select `termini`.`id` AS `id`,`termini`.`ime` AS `ime`,`termini`.`idVakcine` AS `idVakcine`,`termini`.`datum` AS `datum`,`termini`.`komentar` AS `komentar`,`termini`.`odobren` AS `odobren`,`vakcine`.`naziv` AS `naziv` from (`termini` join `vakcine` on(`termini`.`idVakcine` = `vakcine`.`id`)) ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `korisnici`
+--
+ALTER TABLE `korisnici`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `termini`
+--
+ALTER TABLE `termini`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vakcine`
+--
+ALTER TABLE `vakcine`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `korisnici`
+--
+ALTER TABLE `korisnici`
+  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `termini`
+--
+ALTER TABLE `termini`
+  MODIFY `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `vakcine`
+--
+ALTER TABLE `vakcine`
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,8 @@
+01.10.2021 14:48:26 - Odobren termin za korisnika: Rasa Rasic, datuma: 2021-10-01, vakcina: 5.
+01.10.2021 14:48:28 - Odobren termin za korisnika: Vesa Vesic, datuma: 2021-09-30, vakcina: 3.
+01.10.2021 14:48:29 - Odobren termin za korisnika: Mita Mitic, datuma: 2021-09-30, vakcina: 2.
+01.10.2021 14:48:30 - Odobren termin za korisnika: Cala Calic, datuma: 2021-10-07, vakcina: 4.
+01.10.2021 14:48:32 - Odobren termin za korisnika: Mrka Mrkic, datuma: 2021-10-04, vakcina: 5.
+01.10.2021 14:48:33 - Odobren termin za korisnika: Morza Morzic, datuma: 2021-10-09, vakcina: 6.
+01.10.2021 15:30:10 - Odobren termin za korisnika: test test, datuma: 2021-10-21, vakcina: 5.
+22.01.2022 13:29:07 - Odobren termin za korisnika: Pera Peric, datuma: 2022-02-01, vakcina: 1.
